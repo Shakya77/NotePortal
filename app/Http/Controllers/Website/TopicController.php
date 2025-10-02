@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Guest;
+namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 
-class GuestController extends Controller
+class TopicController extends Controller
 {
-    public function index(Request $request, $slug, $default = "default")
+    public function show($slug)
     {
         $topic = Topic::where('slug', $slug)
             ->with('subtopics') // eager load subtopics
             ->firstOrFail();
 
-        return view('topic.index', compact('topic', 'default'));
+        return view('topics.show', compact('topic'));
     }
 }

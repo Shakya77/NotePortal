@@ -38,117 +38,20 @@
         <div class="max-w-screen-xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Popular Tutorials</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- HTML Tutorial Card -->
-                <a href="tutorial-detail.html?lang=html"
-                    class="tutorial-card block p-6 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition">
-                    <div class="flex items-center mb-4">
-                        <div
-                            class="w-12 h-12 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-xl">
-                            H
+                @foreach ($topics as $topic)
+                    <a href="{{ route('default', $topic->slug) }}"
+                        class="tutorial-card block p-6 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-xl">
+                                H
+                            </div>
+                            <h3 class="ml-3 text-xl font-bold text-gray-900">{{ $topic->title }}</h3>
                         </div>
-                        <h3 class="ml-3 text-xl font-bold text-gray-900">HTML</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">The language for building web pages</p>
-                    <span class="text-green-600 font-semibold">Learn HTML →</span>
-                </a>
-
-                <!-- CSS Tutorial Card -->
-                <a href="tutorial-detail.html?lang=css"
-                    class="tutorial-card block p-6 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition">
-                    <div class="flex items-center mb-4">
-                        <div
-                            class="w-12 h-12 bg-blue-500 rounded flex items-center justify-center text-white font-bold text-xl">
-                            C
-                        </div>
-                        <h3 class="ml-3 text-xl font-bold text-gray-900">CSS</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">The language for styling web pages</p>
-                    <span class="text-green-600 font-semibold">Learn CSS →</span>
-                </a>
-
-                <!-- JavaScript Tutorial Card -->
-                <a href="tutorial-detail.html?lang=javascript"
-                    class="tutorial-card block p-6 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition">
-                    <div class="flex items-center mb-4">
-                        <div
-                            class="w-12 h-12 bg-yellow-400 rounded flex items-center justify-center text-gray-900 font-bold text-xl">
-                            JS
-                        </div>
-                        <h3 class="ml-3 text-xl font-bold text-gray-900">JavaScript</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">The language for programming web pages</p>
-                    <span class="text-green-600 font-semibold">Learn JavaScript →</span>
-                </a>
-
-                <!-- Python Tutorial Card -->
-                <a href="tutorial-detail.html?lang=python"
-                    class="tutorial-card block p-6 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition">
-                    <div class="flex items-center mb-4">
-                        <div
-                            class="w-12 h-12 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xl">
-                            Py
-                        </div>
-                        <h3 class="ml-3 text-xl font-bold text-gray-900">Python</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">A popular programming language</p>
-                    <span class="text-green-600 font-semibold">Learn Python →</span>
-                </a>
-
-                <!-- SQL Tutorial Card -->
-                <a href="tutorial-detail.html?lang=sql"
-                    class="tutorial-card block p-6 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition">
-                    <div class="flex items-center mb-4">
-                        <div
-                            class="w-12 h-12 bg-indigo-600 rounded flex items-center justify-center text-white font-bold text-xl">
-                            SQL
-                        </div>
-                        <h3 class="ml-3 text-xl font-bold text-gray-900">SQL</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">A language for accessing databases</p>
-                    <span class="text-green-600 font-semibold">Learn SQL →</span>
-                </a>
-
-                <!-- PHP Tutorial Card -->
-                <a href="tutorial-detail.html?lang=php"
-                    class="tutorial-card block p-6 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition">
-                    <div class="flex items-center mb-4">
-                        <div
-                            class="w-12 h-12 bg-purple-600 rounded flex items-center justify-center text-white font-bold text-xl">
-                            PHP
-                        </div>
-                        <h3 class="ml-3 text-xl font-bold text-gray-900">PHP</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">A web server programming language</p>
-                    <span class="text-green-600 font-semibold">Learn PHP →</span>
-                </a>
-
-                <!-- Java Tutorial Card -->
-                <a href="tutorial-detail.html?lang=java"
-                    class="tutorial-card block p-6 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition">
-                    <div class="flex items-center mb-4">
-                        <div
-                            class="w-12 h-12 bg-red-600 rounded flex items-center justify-center text-white font-bold text-xl">
-                            J
-                        </div>
-                        <h3 class="ml-3 text-xl font-bold text-gray-900">Java</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">A popular programming language</p>
-                    <span class="text-green-600 font-semibold">Learn Java →</span>
-                </a>
-
-                <!-- C++ Tutorial Card -->
-                <a href="tutorial-detail.html?lang=cpp"
-                    class="tutorial-card block p-6 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition">
-                    <div class="flex items-center mb-4">
-                        <div
-                            class="w-12 h-12 bg-pink-600 rounded flex items-center justify-center text-white font-bold text-xl">
-                            C++
-                        </div>
-                        <h3 class="ml-3 text-xl font-bold text-gray-900">C++</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">A powerful programming language</p>
-                    <span class="text-green-600 font-semibold">Learn C++ →</span>
-                </a>
+                        <p class="text-gray-600 mb-4">{{ $topic->description }}</p>
+                        <span class="text-gray-600 font-semibold">Start Learning</span>
+                    </a>
+                @endforeach
             </div>
         </div>
     </section>

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Topic extends Model
 {
     use HasFactory;
+
+    public function subtopics()
+    {
+        return $this->hasMany(Subtopic::class);
+    }
 }

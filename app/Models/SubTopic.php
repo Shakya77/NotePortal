@@ -13,4 +13,9 @@ class SubTopic extends Model
     {
         return $this->belongsTo(Topic::class);
     }
+
+    public function contents()
+    {
+        return $this->hasMany(Content::class);
+    }
 }
