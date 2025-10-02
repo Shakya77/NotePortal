@@ -13,6 +13,19 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('subtopic_id');
+            $table->foreign('subtopic_id')->references('id')->on('sub_topics');
+
+            $table->string('title');
+            $table->string('slug');
+            $table->text('content')->nullable();
+
+            $table->integer('order')->default(0);
+            $table->boolean('is_active')->default(true);
+
+            $table->foreign('created_by')->references('id')->on('users')->nullable();
+            $table->foreign('updated_by')->references('id')->on('users')->nullable();
+
             $table->timestamps();
         });
     }
