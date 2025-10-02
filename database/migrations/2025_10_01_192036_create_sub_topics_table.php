@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('topic_id');
             $table->foreign('topic_id')->references('id')->on('topics');
 
-            $table->string('name');
+            $table->string('title');
             $table->string('slug');
             $table->string('description')->nullable();
             $table->string('image')->nullable();
