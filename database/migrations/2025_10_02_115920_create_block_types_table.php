@@ -13,9 +13,18 @@ return new class extends Migration
     {
         Schema::create('block_types', function (Blueprint $table) {
             $table->id();
+
             $table->string('name');
             $table->string('slug');
+
             $table->json('schema')->nullable();
+
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->foreign('created_by')->references('id')->on('users');
+
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->foreign('updated_by')->references('id')->on('users');
+
             $table->timestamps();
         });
     }
