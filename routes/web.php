@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Guest\GuestController;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Website\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+// Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+Route::get('/', function () {
+    return view('example.index');
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -31,3 +35,5 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 Route::get('{slug}/{default?}', [GuestController::class, 'index'])->name('default');
+Route::get('/notes', [NoteController::class, 'index'])->name('notes.index');
+Route::get('/notes/{id}', [NoteController::class, 'show'])->name('notes.show');

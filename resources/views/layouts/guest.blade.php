@@ -14,13 +14,13 @@
 
 <body class="">
     {{-- Navigation --}}
-    @include('layouts.guest.navigation')
+    {{-- @include('layouts.guest.navigation') --}}
 
     <!-- Page Content -->
     {{ $slot }}
 
     {{-- Footer --}}
-    @include('layouts.guest.footer')
+    {{-- @include('layouts.guest.footer') --}}
 </body>
 
 </html>
