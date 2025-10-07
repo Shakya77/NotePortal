@@ -36,20 +36,14 @@
     <!-- Popular Tutorials Section -->
     <section class="py-12 bg-white">
         <div class="max-w-screen-xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Popular Tutorials</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach ($topics as $topic)
                     <a href="{{ route('default', $topic->slug) }}"
                         class="tutorial-card block p-6 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition">
                         <div class="flex items-center mb-4">
-                            <div
-                                class="w-12 h-12 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-xl">
-                                H
-                            </div>
-                            <h3 class="ml-3 text-xl font-bold text-gray-900">{{ $topic->title }}</h3>
+                            <h3 class="text-3xl font-bold text-gray-900">{{ $topic->title }}</h3>
                         </div>
-                        <p class="text-gray-600 mb-4">{{ $topic->description }}</p>
-                        <span class="text-gray-600 font-semibold">Start Learning</span>
+                        <p class="text-gray-600">{{ $topic->description }}</p>
                     </a>
                 @endforeach
             </div>

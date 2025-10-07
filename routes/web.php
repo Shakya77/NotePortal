@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
-Route::get('/', function () {
-    return view('example.index');
-})->name('welcome');
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -37,3 +35,15 @@ require __DIR__ . '/auth.php';
 Route::get('{slug}/{default?}', [GuestController::class, 'index'])->name('default');
 Route::get('/notes', [NoteController::class, 'index'])->name('notes.index');
 Route::get('/notes/{id}', [NoteController::class, 'show'])->name('notes.show');
+
+Route::get('/tutorials', function () {
+    dd('hello');
+})->name('tutorials');
+
+Route::get('/exercises', function () {
+    dd('hello');
+})->name('exercises');
+
+Route::get('/references', function () {
+    dd('hello');
+})->name('references');

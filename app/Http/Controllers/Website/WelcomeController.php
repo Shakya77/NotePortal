@@ -12,6 +12,6 @@ class WelcomeController extends Controller
     {
         $topics = Topic::where('is_active', true)->get();
 
-        return view('welcome', ['topics' => $topics]);
+        return view('example.index', ['topics' => $topics]);
     }
 }
